@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: mylb
+  name: mylb
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+  selector:
+    app: nginx #select the pods that have this label
+  type: LoadBalancer
+status:
+  loadBalancer: {}

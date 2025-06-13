@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: hpa-test
+  name: hpa-test
+spec:
+  containers:
+  - image: jlsshrn8621001/myprivate
+    name: hpa-test
+    resources:  
+      requests:
+        cpu: 200m
+      limits:
+        cpu: 500m
+#    args: ["--vm","1","--vm-bytes","80M","--timeout","10s"]
+  imagePullSecrets:
+    - name: sample-docker-secret
+  restartPolicy: Always
+status: {}

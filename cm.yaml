@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  first: haroun
+  last: jlassi
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: sample-cm

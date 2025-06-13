@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deploy-nginx
+  name: deploy-nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: deploy-nginx
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deploy-nginx
+    spec:
+      containers:
+      - image: jlsshrn8621001/back
+        name: nginx
+        env:
+        - name: app_name
+          value: "k8s101"
+        ports:
+        - containerPort: 30000
+        resources: {}
+status: {}
